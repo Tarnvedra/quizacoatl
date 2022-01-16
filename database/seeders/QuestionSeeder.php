@@ -24,7 +24,7 @@ class QuestionSeeder extends Seeder
                 'topic_id' => $question->topic_id,
                 "difficulty_id" => $question->difficulty_id,
                 "question" => $question->question,
-                "answer" => $question->answer
+                "answer" => encrypt($question->answer)
             ));
     }
 

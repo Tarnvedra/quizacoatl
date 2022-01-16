@@ -1,88 +1,104 @@
 @extends('layouts.app')
 
 @section('content')
-       <div class="row">
-           <form>
-               <div class="col-sm-5">
-               <div class="card">
-                   <div class="card-body">
-                       <div class="form-group">
-                           <button type="submit" id="art" class="btn-dark btn-lg">Art</button>
-                           <button type="submit" id="film" class="btn-light btn-lg">Film</button>
-                           <button type="submit" id="food-drink" class="btn-success btn-lg">Food & Drink</button>
-                           <button type="submit" id="gen-knowledge" class="btn-info btn-lg">General Knowledge</button>
-                           <button type="submit" id="geography" class="btn-warning btn-lg">Geography</button>
-                       </div>
-                   </div>
-               </div>
-               </div>
-               <div class="col-sm-5">
-               <div class="card">
-                   <div class="card-body">
-                       <div class="form-group">
-                           <button type="submit" id="history" class="btn-secondary btn-lg">History</button>
-                           <button type="submit" id="literature" class="btn-warning btn-lg">Literature</button>
-                           <button type="submit" id="music " class="btn-light btn-lg">Music</button>
-                           <button type="submit" id="politics" class="btn-success btn-lg">Politics</button>
-                           <button type="submit" id="science" class="btn-danger btn-lg">Science</button>
-                       </div>
-                   </div>
-               </div>
-               </div>
-               <div class="col-sm-5">
-               <div class="card">
-                   <div class="card-body">
-                       <div class="form-group">
-                           <button type="submit" id="sport" class="btn-info btn-lg">Sport</button>
-                           <button type="submit" id="technology" class="btn-dark btn-lg">Technology</button>
-                           <button type="submit" id="travel" class="btn-secondary btn-lg">Travel</button>
-                           <button type="submit" id="tv" class="btn-success btn-lg">TV</button>
-                           <button type="submit" id="random" class="btn-primary btn-lg">Random</button>
-                       </div>
-                   </div>
-               </div>
-               </div>
-           </form>
-       </div>
+    <div class="container-scroller">
+        <!-- partial:partials/_horizontal-navbar.html -->
+      @include('partials.nav')
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="row">
+                        <div class="col-md-3 grid-margin stretch-card">
+                            <div class="card"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                <div class="card-body pb-0">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h2 class="text-success font-weight-bold">{{ $totalTopics }}</h2>
+                                        <i class="mdi mdi-account-outline mdi-18px text-dark"></i>
+                                    </div>
+                                </div>
+                                <canvas id="topics" width="289" height="144" style="display: block; width: 289px; height: 144px;" class="chartjs-render-monitor"></canvas>
+                                <div class="line-chart-row-title">Topics</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 grid-margin stretch-card">
+                            <div class="card"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                <div class="card-body pb-0">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h2 class="text-danger font-weight-bold">{{ $totalQuestions }}</h2>
+                                        <i class="mdi mdi-refresh mdi-18px text-dark"></i>
+                                    </div>
+                                </div>
+                                <canvas id="questions" width="289" height="144" style="display: block; width: 289px; height: 144px;" class="chartjs-render-monitor"></canvas>
+                                <div class="line-chart-row-title">Questions</div>
+                            </div>
+                        </div>
 
-       <div class="row">
-           <div class="col-sm-8">
-           <div class="card text-black bg-light mb-3">
-               <div class="card-body">
-                   <h5 class="card-title">Question</h5>
-                   <p class="card-text" id="question">Where is the original Starry Night by Vincent Van Gogh housed?{{ $question ?? '' }}</p>
-               </div>
-               <div class="card-footer text-muted">
-                   <a href="#" class="btn btn-danger">Reveal Answer</a>
-               </div>
-           </div>
-           </div>
-       </div>
+                            <div class="col-md-3 grid-margin stretch-card">
+                                <div class="card"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                    <div class="card-body pb-0">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h2 class="text-success font-weight-bold">{{ $newTopics }}</h2>
+                                            <i class="mdi mdi-account-outline mdi-18px text-dark"></i>
+                                        </div>
+                                    </div>
+                                    <canvas id="new-topics" width="289" height="144" style="display: block; width: 289px; height: 144px;" class="chartjs-render-monitor"></canvas>
+                                    <div class="line-chart-row-title">New Topics</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 grid-margin stretch-card">
+                                <div class="card"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                    <div class="card-body pb-0">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h2 class="text-danger font-weight-bold">{{ $newQuestions }}</h2>
+                                            <i class="mdi mdi-refresh mdi-18px text-dark"></i>
+                                        </div>
+                                    </div>
+                                    <canvas id="new-questions" width="289" height="144" style="display: block; width: 289px; height: 144px;" class="chartjs-render-monitor"></canvas>
+                                    <div class="line-chart-row-title">New Questions</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                        <div class="col-xl-12 col-lg-9 col-md-3">
+                            <div class="card shadow mb-4">
+                                <div class="card-body">
+                            <div class="card-title">Latest Questions Added</div>
+                            <div class="row">
+                                <table class="table table-bordered table-hover">
+                                    <tr style="background-color: whitesmoke;">
+                                        <th>#</th>
+                                        <th>Topic</th>
+                                        <th>Question</th>
+                                        <th>Added</th>
+
+                                    <tr>
+                                    @foreach($questions as $question)
+                                        <tr>
+                                            <td>{{ $question->id }}</td>
+                                            <td>{{ $question->topic_id  }}</a></td>
+                                            <td>{{ $question->question }}</td>
+                                            <td>{{ $question->created_at}}</td>
+                                        </tr>
+                                    @endforeach
+                                </table>
+                            </div>
+                        </div>
+                            </div>
+                        </div>
+
+                </div>
 
 
-       <div class="row">
-           <div class="col-sm-8">
-           <div class="card text-black bg-white mb-3">
-               <div class="card-body">
-                   <h5 class="card-title">Answer</h5>
-                   <p class="card-text text-muted" id="answer">#Placeholder for answer#{{ $answer ?? '' }}</p>
-               </div>
-               <div class="card-footer text-muted">
-                   <a href="#" class="btn btn-primary">Hide Answer</a>
-               </div>
-           </div>
-           </div>
-       </div>
+                @include('partials.footer')
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
 @endsection
-
-@push('scripts')
-<script>
-    $(document).ready(function () {
-        $(document).on('click', '#art', function (e) {
-            e.preventDefault();
-
-
-        });
-    });
-</script>
-@endpush

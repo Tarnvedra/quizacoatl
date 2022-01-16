@@ -21,6 +21,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::post('/', [HomeController::class, 'logout'])->name('logout.app');
+Route::get('/home', [DashboardController::class, 'index'])->name('dashboard');
+// Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+ Route::get('/quizboard', [DashboardController::class, 'quizboard'])->name('quiz');
+
 
