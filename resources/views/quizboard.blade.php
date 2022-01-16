@@ -3,7 +3,7 @@
 @include('partials.nav')
 @section('content')
        <div class="row">
-           <form>
+           <form id="topic-selector" method="#" action="#">
                <div class="col-md-10">
                <div class="card">
                    <div class="card-body">

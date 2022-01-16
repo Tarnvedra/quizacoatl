@@ -45,6 +45,7 @@
                         <ul>
                             <li class="nav-item"><a class="nav-link" href="#">Add Topic</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Add Question</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Update User Settings</a></li>
                         </ul>
                     </div>
                 </li>
@@ -64,11 +65,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=""   onclick="event.preventDefault();
+                    <a class="nav-link" href=""  onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                         <i class="mdi mdi-finance menu-icon"></i>
                         <span class="menu-title">Logout</span>
-                        <i class="menu-arrow"></i>
+                        <i class="menu-arrow"></i></a>
                     <form id="logout-form" action="{{ route('logout.app') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
