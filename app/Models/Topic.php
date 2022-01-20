@@ -32,8 +32,4 @@ class Topic extends Model
       return $this->hasMany(Question::class);
   }
 
-  public function question(): HasOne
-  {
-      return $this->hasOne(Question::class);
-  }
 }

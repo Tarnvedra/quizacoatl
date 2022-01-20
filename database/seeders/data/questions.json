@@ -4,6 +4,13 @@
     { "topic_id": 1, "difficulty_id": 3, "question": "Where is the original Starry Night by Vincent Van Gogh housed?", "answer": "Museum of Modern Art, New York"},
     { "topic_id": 1, "difficulty_id": 3, "question": "In which century did Rembrandt live?", "answer": "17th"},
     { "topic_id": 1, "difficulty_id": 3, "question": "In what decade was celebrated artist Tracy Emin born?", "answer": "1960s"},
+    { "topic_id": 1, "difficulty_id": 3, "question": "Who painted The Scream in 1893?", "answer":  "Edvard Munch"},
+    { "topic_id": 1, "difficulty_id": 3, "question": "The 1930 Grant Wood painting ‘American Gothic’ depicts a woman and a man holding what?", "answer":  "A pitchfork"},
+    { "topic_id": 1, "difficulty_id": 3, "question": "Name the artist that painted The Creation of Adam – the painting found on the Sistine Chapel’s ceiling.", "answer":  "Michelangelo"},
+    { "topic_id": 1, "difficulty_id": 3, "question": "Where is the Mona Lisa displayed?", "answer":  "The Louvre Museum, France"},
+    { "topic_id": 1, "difficulty_id": 3, "question": "Rene Magritte’s ‘The Son of Man’ depicts a man in a suit and bowler hat. Which fruit is covering his face?", "answer":  "Apple"},
+    { "topic_id": 1, "difficulty_id": 3, "question": "Who painted The Birth of Venus?", "answer":  "Sandro Botticelli"},
+    { "topic_id": 1, "difficulty_id": 3, "question": "What are the names of all four Tate galleries?", "answer":  "Tate Britain, Tate Modern, Tate Liverpool and Tate St Ives."},
 
     { "topic_id": 2, "difficulty_id": 3, "question": "What is the name of The Bride, played by Uma Thurman, in Quentin Tarantino’s Kill Bill franchise?", "answer": "Beatrix Kiddo"},
     { "topic_id": 2, "difficulty_id": 3, "question": "Which colour pill does Neo swallow in The Matrix?", "answer": "Red"},
@@ -63,7 +70,7 @@
     { "topic_id": 10, "difficulty_id": 3, "question": "What name is given for the number of protons found in the nucleus of an atom?", "answer": "Atomic number"},
     { "topic_id": 10, "difficulty_id": 3, "question": "What was the name of the first man-made satellite launched by the Soviet Union in 1957?", "answer": "Sputnik 1"},
 
-    { "topic_id": 11, "difficulty_id": 3, "question": "Jurgen Klopp began his manegeral career ayt which German club?", "answer": "Mainz 05"},
+    { "topic_id": 11, "difficulty_id": 3, "question": "Jurgen Klopp began his managerial career at which German club?", "answer": "Mainz 05"},
     { "topic_id": 11, "difficulty_id": 3, "question": "In which year did Roger Federer win his first Wimbledon title?", "answer": "2003"},
     { "topic_id": 11, "difficulty_id": 3, "question": "What is Muhammad Ali’s real name?", "answer": "Cassius Clay"},
     { "topic_id": 11, "difficulty_id": 3, "question": "In rugby union, who is England Men’s all-time top try scorer?", "answer": "Rory Underwood"},

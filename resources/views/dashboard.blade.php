@@ -44,7 +44,7 @@
                                         </div>
                                     </div>
                                     <canvas id="new-topics" width="289" height="144" style="display: block; width: 289px; height: 144px;" class="chartjs-render-monitor"></canvas>
-                                    <div class="line-chart-row-title">New Topics</div>
+                                    <div class="line-chart-row-title">Newly Added Topics</div>
                                 </div>
                             </div>
                             <div class="col-md-3 grid-margin stretch-card">
@@ -56,7 +56,7 @@
                                         </div>
                                     </div>
                                     <canvas id="new-questions" width="289" height="144" style="display: block; width: 289px; height: 144px;" class="chartjs-render-monitor"></canvas>
-                                    <div class="line-chart-row-title">New Questions</div>
+                                    <div class="line-chart-row-title">Newly Added Questions (Last 7 Days)</div>
                                 </div>
                             </div>
 
@@ -79,9 +79,9 @@
                                     @foreach($questions as $question)
                                         <tr>
                                             <td>{{ $question->id }}</td>
-                                            <td>{{ $question->topic_id  }}</a></td>
+                                            <td>{{ ucfirst($question->topic->name) }}</a></td>
                                             <td>{{ $question->question }}</td>
-                                            <td>{{ $question->created_at}}</td>
+                                            <td>{{ $question->created_at->diffForHumans()}}</td>
                                         </tr>
                                     @endforeach
                                 </table>

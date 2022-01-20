@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('/css//style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css//app.css') }}">
 
 </head>
 <body>

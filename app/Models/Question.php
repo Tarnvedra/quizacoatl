@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
@@ -33,9 +34,9 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  */
 class Question extends Model
 {
-   public function topic(): HasOne
+   public function topic(): BelongsTo
    {
-       return $this->hasOne(Topic::class);
+       return $this->belongsTo(Topic::class);
    }
 
    public function difficulty(): HasOne
