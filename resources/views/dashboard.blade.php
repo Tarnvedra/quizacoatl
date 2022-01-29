@@ -8,6 +8,7 @@
         <div class="container-fluid page-body-wrapper">
             <div class="main-panel">
                 <div class="content-wrapper">
+                    @include('partials.messages')
                     <div class="row">
                         <div class="row">
                         <div class="col-md-3 grid-margin stretch-card">
@@ -79,8 +80,12 @@
                                     @foreach($questions as $question)
                                         <tr>
                                             <td>{{ $question->id }}</td>
+                                            @if($question->topic->name === 'tv')
+                                                <td>{{ strtoupper($question->topic->name) }}</a></td>
+                                            @else
                                             <td>{{ ucfirst($question->topic->name) }}</a></td>
-                                            <td>{{ $question->question }}</td>
+                                            @endif
+                                                <td>{{ $question->question }}</td>
                                             <td>{{ $question->created_at->diffForHumans()}}</td>
                                         </tr>
                                     @endforeach

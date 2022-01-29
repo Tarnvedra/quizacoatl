@@ -8,23 +8,13 @@
         <div class="container-fluid page-body-wrapper">
             <div class="main-panel">
                 <div class="content-wrapper">
+
                     <div class="row">
-                        <form id="topic-selector" method="#" action="#">
-                            <div class="col-md-10">
-                                <div class="card">
-                                    <div class="card-title">Topics</div>
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            @foreach($topics as $topic)
-                                                <button type="submit" id="{{ $topic->name }}"
-                                                        class="{{ $topic->class }}">{{ ucfirst($topic->name) }}</button>
-                                            @endforeach
-                                            <button type="submit" id="random" class="btn-primary btn-lg">Random</button>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="col-md-10">
+                            <div class="card">
+                            <topic-component> :route="{{ route('api-topics') }}"</topic-component>
                             </div>
-                        </form>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-10">
@@ -32,7 +22,7 @@
                                 <div class="card-title">Questions / Answers</div>
                                 <div class="card-body">
                                     <div class="row">
-                                        <question-component></question-component>
+                                        <question-component> </question-component>
                                     </div>
                                     <div class="row">
                                         <answer-component></answer-component>
@@ -43,8 +33,6 @@
                     </div>
                     @include('partials.footer')
                 </div>
-            </div>
-        </div>
     </div>
 @endsection
 

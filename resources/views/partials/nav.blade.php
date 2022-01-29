@@ -54,9 +54,11 @@
                 </a>
                 <div class="submenu">
                     <ul>
-                        <li class="nav-item"><a class="nav-link" href="#">Add Topic</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Add Question</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">View All Questions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('add-topic') }}">Add Topic</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('view-topics') }}">View All Topics</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('add-question') }}">Add Question</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('view-questions') }}">View All Questions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('import-questions') }}">Import Questions</a></li>
                     </ul>
                 </div>
                 </li>
@@ -76,7 +78,7 @@
                                 <form id="logout-form" action="{{ route('logout.app') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Update User Settings</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('user-settings') }}">Update User Settings</a></li>
                         </ul>
                     </div>
                 </li>
