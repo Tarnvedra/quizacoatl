@@ -11,13 +11,13 @@ use Illuminate\Contracts\View\View;
 class DashboardController extends Controller
 {
 
-    public function quizboard(ViewFactory $view): View
+    public function quizBoard(ViewFactory $view): View
     {
         $topics = Topic::query()->get();
         $user = auth()->user();
         $question = '';
         $answer = '';
-        return $view->make('quizboard', [
+        return $view->make('quiz-board', [
                 'user' => $user,
                 'question' => $question,
                 'answer' => $answer,
@@ -35,6 +35,9 @@ class DashboardController extends Controller
         $newTopics = Topic::query()->where('id', '>' ,'14')->count();
         $newQuestions = Question::query()->where('created_at', '>=', $date)->count();
         $questions = Question::query()->where('created_at', '>=', $date)->latest()->limit(15)->get();
+        if(!$questions || $questions->count() < 4) {
+            $questions = Question::query()->where('created_at', '<=', Carbon::yesterday())->latest()->limit(15)->get();
+        }
         return $view->make('dashboard', [
             'questions' => $questions,
             'totalTopics' => $totalTopics,
