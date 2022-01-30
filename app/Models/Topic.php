@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  *
  * @property int $id
  * @property string $name
+ * @property string $class
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Question[] $questions
@@ -23,6 +24,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @method static \Illuminate\Database\Eloquent\Builder|Topic whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Topic whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Topic whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Topic whereClass($value)
  * @mixin \Eloquent
  */
 class Topic extends Model

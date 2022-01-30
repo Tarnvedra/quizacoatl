@@ -31,6 +31,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @mixin \Eloquent
  * @property int $difficulty_id
  * @method static \Illuminate\Database\Eloquent\Builder|Question whereDifficultyId($value)
+ * @property-read \App\Models\Difficulty|null $difficulty
  */
 class Question extends Model
 {
