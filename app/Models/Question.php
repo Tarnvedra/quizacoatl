@@ -44,4 +44,9 @@ class Question extends Model
    {
        return$this->hasOne(Difficulty::class);
    }
+
+   public function user(): BelongsTo
+   {
+       return $this->belongsTo(User::class);
+   }
 }

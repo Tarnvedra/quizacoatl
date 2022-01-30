@@ -10,7 +10,7 @@
                 <div class="content-wrapper">
                     @include('partials.messages')
                     <div class="row">
-                            <form id="add-question" method="POST" action="{{ route('save-question') }}">
+                            <form id="add-question" method="POST" action="{{ route('save-question', ['user' => $user]) }}">
                                 @csrf
                                 <div class="col-md-10">
                                     <div class="card">

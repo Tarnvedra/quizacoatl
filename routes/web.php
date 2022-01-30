@@ -34,7 +34,7 @@ Route::get('/maintenance/questions', [MaintenanceController::class, 'questionsVi
 Route::get('/maintenance/question/{question}', [MaintenanceController::class, 'questionView'])->name('view-question');
 
 Route::get('/maintenance/add-question', [MaintenanceController::class, 'addQuestionView'])->name('add-question');
-Route::post('/maintenance-save-question', [QuestionController::class, 'saveQuestion'])->name('save-question');
+Route::post('/maintenance-save-question/{user}', [QuestionController::class, 'saveQuestion'])->name('save-question');
 // Topics
 Route::get('/maintenance/add-topic', [MaintenanceController::class, 'addTopicView'])->name('add-topic');
 Route::post('/maintenance/save-topic', [TopicController::class, 'saveTopic'])->name('save-topic');
