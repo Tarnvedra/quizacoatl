@@ -10,6 +10,7 @@
                 <div class="content-wrapper">
                     @include('partials.messages')
                     <div class="row">
+                        @if($user->id === $question->user_id)
                         <div class="col-md-10">
                             <div class="card">
                                 <div class="card-body">
@@ -46,11 +47,44 @@
                             <a href="{{ route('view-questions') }}" class="btn btn-success">Return To Questions</a>
                         </div>
                     </div>
+                    @else
+                        <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">Action Unauthorised</div>
+                            <div class="col-sm-8">
+                                <div class="card text-black bg-light mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Question</h5>
+                                        <p class="card-text" id="question">You do not have permission to access this question!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <div class="col-sm-8">
+                                <p>
+                                    <button class="btn btn-outline-danger" type="button"
+                                            data-toggle="collapse" data-target="#answerCollapse"
+                                            aria-expanded="false" aria-controls="answerCollapse">
+                                        Reveal Answer
+                                    </button>
+                                </p>
+                                <div class="collapse" id="answerCollapse">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <b>{{ 'No Cheating Allowed ;)' }}</b>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
-        @include('partials.footer')
     </div>
+    @include('partials.footer')
 @endsection
 
 @push('scripts')
