@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{{ asset('/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('/css//style.css') }}">
     <link rel="stylesheet" href="{{ asset('/css//app.css') }}">
-
 </head>
 <body>
     <div id="app">
@@ -23,6 +22,8 @@
     </div>
     <script src="{{ asset('/js/vendor.bundle.base.js') }}"></script>
     <script src="{{ asset('/js/template.js') }}"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

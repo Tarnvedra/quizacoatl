@@ -31,6 +31,8 @@ Route::get('/quiz-board', [DashboardController::class, 'quizBoard'])->name('quiz
 // Questions
 Route::get('/maintenance/import-questions', [MaintenanceController::class, 'importQuestionsView'])->name('import-questions');
 Route::get('/maintenance/questions', [MaintenanceController::class, 'questionsView'])->name('view-questions');
+Route::get('/maintenance/question/{question}', [MaintenanceController::class, 'questionView'])->name('view-question');
+
 Route::get('/maintenance/add-question', [MaintenanceController::class, 'addQuestionView'])->name('add-question');
 Route::post('/maintenance-save-question', [QuestionController::class, 'saveQuestion'])->name('save-question');
 // Topics

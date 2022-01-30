@@ -26,7 +26,7 @@
                                             <tr>
                                             @foreach($questions as $question)
                                                 <tr>
-                                                    <td>{{ $question->id }}</td>
+                                                    <td><a href="{{ route('view-question', ['question' => $question]) }}">{{ $question->id }}</a></td>
                                                     @if($question->topic->name === 'tv')
                                                         <td>{{ strtoupper($question->topic->name) }}</a></td>
                                                     @else

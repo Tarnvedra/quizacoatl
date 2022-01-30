@@ -19,29 +19,26 @@ class MaintenanceController extends Controller
 
     public function importQuestionsView(ViewFactory $view): View
     {
-        $user = auth()->user();
         return $view->make('maintenance.import-questions', [
-            'user' => $user
+            'user' => Auth::user()
         ]);
     }
 
     public function addTopicView(ViewFactory $view): View
     {
-        $user = auth()->user();
         $topics = Topic::query()->get();
         return $view->make('maintenance.add-topic', [
-            'user'   => $user,
+            'user'   => Auth::user(),
             'topics' => $topics
         ]);
     }
 
     public function addQuestionView(ViewFactory $view): View
     {
-        $user = auth()->user();
         $topics = Topic::query()->get();
         $difficulty = Difficulty::query()->get();
         return $view->make('maintenance.add-question', [
-            'user'       => $user,
+            'user'       => Auth::user(),
             'topics'     => $topics,
             'difficulty' => $difficulty
         ]);
@@ -50,29 +47,34 @@ class MaintenanceController extends Controller
 
     public function questionsView(ViewFactory $view): View
     {
-        $user = auth()->user();
-        $questions = Question::query()->where('user_id', '=', $user->id)->get();
+        $questions = Question::query()->where('user_id', '=', Auth::id())->get();
         return $view->make('maintenance.questions', [
-            'user'      => $user,
+            'user'      => Auth::user(),
             'questions' => $questions
+        ]);
+    }
+
+    public function questionView(ViewFactory $view, Question $question): View
+    {
+        return $view->make('maintenance.question', [
+            'user'      => Auth::user(),
+            'question' => $question
         ]);
     }
 
     public function topicsView(ViewFactory $view): View
     {
-        $user = auth()->user();
         $topics = Topic::query()->get();
         return $view->make('maintenance.topics', [
-            'user'   => $user,
+            'user'   => Auth::user(),
             'topics' => $topics
         ]);
     }
 
     public function userSettingsView(ViewFactory $view): View
     {
-        $user = auth()->user();
         return $view->make('maintenance.user-settings', [
-            'user' => $user
+            'user' => Auth::user()
         ]);
     }
 
