@@ -51,7 +51,7 @@ class MaintenanceController extends Controller
     public function questionsView(ViewFactory $view): View
     {
         $user = auth()->user();
-        $questions = Question::query()->get();
+        $questions = Question::query()->where('user_id', '=', $user->id)->get();
         return $view->make('maintenance.questions', [
             'user'      => $user,
             'questions' => $questions

@@ -57,7 +57,7 @@
                         <li class="nav-item"><a class="nav-link" href="{{ route('add-topic') }}">Add Topic</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('view-topics') }}">View All Topics</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('add-question') }}">Add Question</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('view-questions') }}">View All Questions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('view-questions') }}">View Your Questions</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('import-questions') }}">Import Questions</a></li>
                     </ul>
                 </div>

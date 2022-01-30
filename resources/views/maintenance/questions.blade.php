@@ -14,7 +14,7 @@
                         <div class="col-xl-12 col-lg-9 col-md-3">
                             <div class="card shadow mb-4">
                                 <div class="card-body">
-                                    <div class="card-title">Questions</div>
+                                    <div class="card-title">Questions You Have Added</div>
                                     <div class="row">
                                         <table class="table table-bordered table-hover">
                                             <tr style="background-color: whitesmoke;">
