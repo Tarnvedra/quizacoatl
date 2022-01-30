@@ -34,9 +34,14 @@ class DashboardController extends Controller
         $totalQuestions = Question::query()->count();
         $newTopics = Topic::query()->where('id', '>' ,'14')->count();
         $newQuestions = Question::query()->where('created_at', '>=', $date)->count();
-        $questions = Question::query()->where('created_at', '>=', $date)->latest()->limit(15)->get();
+        $questions = Question::query()->where('created_at', '>=', $date)
+                                      ->where('user_id', '=', 1)
+                                      ->latest()->limit(15)->get();
+
         if(!$questions || $questions->count() < 4) {
-            $questions = Question::query()->where('created_at', '<=', Carbon::yesterday())->latest()->limit(15)->get();
+            $questions = Question::query()->where('created_at', '<=', Carbon::yesterday())
+                                          ->where('user_id', '=', 1)
+                                          ->latest()->limit(15)->get();
         }
         return $view->make('dashboard', [
             'questions' => $questions,
