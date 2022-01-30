@@ -18,11 +18,11 @@
                                         <div class="card-title">Update Password</div>
                                         <div class="form-group">
                                             <label for="topic">Password :</label>
-                                            <input class="form-control" type="text" name="password">
+                                            <input class="form-control" type="password" name="password">
                                         </div>
                                         <div class="form-group">
                                             <label for="topic">Confirm Password :</label>
-                                            <input class="form-control" type="text" name="confirm-password">
+                                            <input class="form-control" type="password" name="confirm-password">
                                         </div>
                                     </div>
                                     <div class="card-footer">

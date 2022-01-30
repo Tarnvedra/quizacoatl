@@ -89,7 +89,7 @@ class MaintenanceController extends Controller
 
     public function updatePassword(UpdatePasswordRequest $request, ResponseFactory $response, User $user): RedirectResponse
     {
-        $user->password = $request->input('password');
+        $user->password = bcrypt($request->input('password'));
         $user->save();
 
         return $response->redirectTo('/home')->with('success', 'Password successfully updated.');
