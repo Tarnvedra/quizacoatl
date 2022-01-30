@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Auth;
 
 class MaintenanceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function importQuestionsView(ViewFactory $view): View
     {
@@ -56,6 +60,11 @@ class MaintenanceController extends Controller
 
     public function questionView(ViewFactory $view, Question $question): View
     {
+        if(Auth::id() !== $question->user_id)
+        {
+            abort(403);
+        };
+
         return $view->make('maintenance.question', [
             'user'      => Auth::user(),
             'question' => $question
