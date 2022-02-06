@@ -2,9 +2,7 @@
 
 @section('content')
     <div class="container-scroller">
-        <!-- partial:partials/_horizontal-navbar.html -->
     @include('partials.nav')
-    <!-- partial -->
         <div class="container-fluid page-body-wrapper">
             <div class="main-panel">
                 <div class="content-wrapper">
@@ -17,11 +15,11 @@
                                     <div class="card-body">
                                         <div class="card-title">Update Password</div>
                                         <div class="form-group">
-                                            <label for="topic">Password :</label>
+                                            <label for="password">Password :</label>
                                             <input class="form-control" type="password" name="password">
                                         </div>
                                         <div class="form-group">
-                                            <label for="topic">Confirm Password :</label>
+                                            <label for="confirm-password">Confirm Password :</label>
                                             <input class="form-control" type="password" name="confirm-password">
                                         </div>
                                     </div>
@@ -39,3 +37,7 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script></script>
+@endpush

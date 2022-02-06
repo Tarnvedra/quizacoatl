@@ -92,7 +92,8 @@
     { "topic_id": 14, "difficulty_id": 3, "question": "How many episodes of Game of Thrones are there?", "answer": "73"},
     { "topic_id": 14, "difficulty_id": 3, "question": "Which British TV show recorded the largest audience for a single episode with over 30 million viewers?", "answer": "Eastenders (on Christmas Day 1986)"},
     { "topic_id": 14, "difficulty_id": 3, "question": "Who played Rodney Trotter in Only Fools and Horses?", "answer": "Nicholas Lyndhurst"},
-    { "topic_id": 14, "difficulty_id": 3, "question": "In which fictional town is Netflix show Stranger Things primarily set?", "answer": "Hawkins, Indiana"}
+    { "topic_id": 14, "difficulty_id": 3, "question": "In which fictional town is Netflix show Stranger Things primarily set?", "answer": "Hawkins, Indiana"},
+    { "topic_id": 14, "difficulty_id": 3, "question": "In what year did Coronation Street first air on ITV?", "answer": "1960" }
 
 
 ]

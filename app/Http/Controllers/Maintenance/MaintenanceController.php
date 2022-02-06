@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Maintenance;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Maintenance\Resources\UpdatePasswordRequest;
+use Carbon\Carbon;
 use Illuminate\Routing\ResponseFactory;
 use Illuminate\Http\RedirectResponse;
 use App\Models\Difficulty;
@@ -28,14 +29,7 @@ class MaintenanceController extends Controller
         ]);
     }
 
-    public function addTopicView(ViewFactory $view): View
-    {
-        $topics = Topic::query()->get();
-        return $view->make('maintenance.add-topic', [
-            'user'   => Auth::user(),
-            'topics' => $topics
-        ]);
-    }
+
 
     public function addQuestionView(ViewFactory $view): View
     {
@@ -52,7 +46,17 @@ class MaintenanceController extends Controller
     public function questionsView(ViewFactory $view): View
     {
         $questions = Question::query()->where('user_id', '=', Auth::id())->get();
-        return $view->make('maintenance.questions', [
+        return $view->make('maintenance.your-questions', [
+            'user' => Auth::user(),
+            'questions' => $questions
+        ]);
+    }
+
+        public function allQuestionsView(ViewFactory $view): View
+    {
+        $questions = Question::query()->where('created_at', '<=', Carbon::now()->subDays(40))
+                                      ->orWhere('user_id', '=', Auth::id())->get();
+        return $view->make('maintenance.all-questions', [
             'user'      => Auth::user(),
             'questions' => $questions
         ]);
@@ -69,29 +73,5 @@ class MaintenanceController extends Controller
             'user'      => Auth::user(),
             'question' => $question
         ]);
-    }
-
-    public function topicsView(ViewFactory $view): View
-    {
-        $topics = Topic::query()->get();
-        return $view->make('maintenance.topics', [
-            'user'   => Auth::user(),
-            'topics' => $topics
-        ]);
-    }
-
-    public function userSettingsView(ViewFactory $view): View
-    {
-        return $view->make('maintenance.user-settings', [
-            'user' => Auth::user()
-        ]);
-    }
-
-    public function updatePassword(UpdatePasswordRequest $request, ResponseFactory $response, User $user): RedirectResponse
-    {
-        $user->password = bcrypt($request->input('password'));
-        $user->save();
-
-        return $response->redirectTo('/home')->with('success', 'Password successfully updated.');
     }
 }

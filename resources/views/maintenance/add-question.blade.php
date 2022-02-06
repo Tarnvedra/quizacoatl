@@ -2,10 +2,9 @@
 
 @section('content')
     <div class="container-scroller">
-        <!-- partial:partials/_horizontal-navbar.html -->
     @include('partials.nav')
-    <!-- partial -->
         <div class="container-fluid page-body-wrapper">
+
             <div class="main-panel">
                 <div class="content-wrapper">
                     @include('partials.messages')
@@ -57,3 +56,7 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script></script>
+@endpush

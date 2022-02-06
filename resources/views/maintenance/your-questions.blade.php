@@ -2,15 +2,13 @@
 
 @section('content')
     <div class="container-scroller">
-        <!-- partial:partials/_horizontal-navbar.html -->
     @include('partials.nav')
-    <!-- partial -->
         <div class="container-fluid page-body-wrapper">
+
             <div class="main-panel">
                 <div class="content-wrapper">
                     @include('partials.messages')
                     <div class="row">
-
                         <div class="col-xl-12 col-lg-9 col-md-3">
                             <div class="card shadow mb-4">
                                 <div class="card-body">
@@ -22,7 +20,6 @@
                                                 <th>Topic</th>
                                                 <th>Question</th>
                                                 <th>Added</th>
-
                                             <tr>
                                             @foreach($questions as $question)
                                                 <tr>
@@ -48,3 +45,8 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script></script>
+@endpush
+

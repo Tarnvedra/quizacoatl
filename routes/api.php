@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Maintenance\QuizController;
+use App\Http\Controllers\Maintenance\TopicController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('api/topics',[QuizController::class, 'getTopics'])->name('api-topics');
+Route::get('api/topics',[TopicController::class, 'getTopics'])->name('api-topics');

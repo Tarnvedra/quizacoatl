@@ -35,6 +35,6 @@ class QuestionController extends Controller
         $saveQuestion->answer = encrypt($request->get('answer'));
         $saveQuestion->save();
 
-        return $response->redirectTo('/maintenance/questions')->with('success', 'Question successfully added.');
+        return $response->redirectTo('/maintenance/your-questions')->with('success', 'Question successfully added.');
     }
 }

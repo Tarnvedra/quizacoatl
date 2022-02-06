@@ -44,7 +44,8 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a href="{{ route('view-questions') }}" class="btn btn-success">Return To Questions</a>
+                            <a href="{{ route('view-your-questions') }}" class="btn btn-success">Return To Questions</a>
+                            <a href="{{ route('view-your-questions') }}" class="btn btn-warning disabled">View Next Question NYI</a>
                         </div>
                     </div>
                     @else

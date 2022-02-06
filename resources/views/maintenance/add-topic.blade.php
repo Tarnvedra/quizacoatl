@@ -60,6 +60,7 @@
                                     <a href="{{ route('dashboard') }}" type="submit" class="btn btn-danger">Cancel</a>
                                 </div>
                             </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -68,4 +69,8 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script></script>
+@endpush
 

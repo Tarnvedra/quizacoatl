@@ -34,15 +34,15 @@
                 <li class="nav-item">
                     <a href="{{ route('quiz') }}" class="nav-link">
                         <i class="mdi mdi-chart-areaspline menu-icon"></i>
-                        <span class="menu-title">Quizboard</span>
+                        <span class="menu-title">Quizboard WIP</span>
 
                         <i class="menu-arrow"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('scores') }}" class="nav-link">
                         <i class="mdi mdi-finance menu-icon"></i>
-                        <span class="menu-title">Scores</span>
+                        <span class="menu-title">Scores NYI</span>
                         <i class="menu-arrow"></i>
                     </a>
                 </li>
@@ -57,8 +57,9 @@
                         <li class="nav-item"><a class="nav-link" href="{{ route('add-topic') }}">Add Topic</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('view-topics') }}">View All Topics</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('add-question') }}">Add Question</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('view-questions') }}">View Your Questions</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('import-questions') }}">Import Questions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('view-your-questions') }}">View Your Questions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('all-questions') }}">View All Questions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('import-questions') }}">Import Questions NYI</a></li>
                     </ul>
                 </div>
                 </li>
