@@ -10,7 +10,7 @@
                 <div class="content-wrapper">
                     @include('partials.messages')
                     <div class="row">
-                        @if($user->id === $question->user_id)
+                        @if($user->id === $question->user_id || $question->created_at <= Carbon\Carbon::now()->subDays(40) )
                         <div class="col-md-10">
                             <div class="card">
                                 <div class="card-body">

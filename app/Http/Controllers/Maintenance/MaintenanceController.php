@@ -64,14 +64,14 @@ class MaintenanceController extends Controller
 
     public function questionView(ViewFactory $view, Question $question): View
     {
-        if(Auth::id() !== $question->user_id)
+        if($question->created_at <= Carbon::now()->subDays(40) || Auth::id() === $question->user_id)
         {
-            abort(403);
-        };
+            return $view->make('maintenance.question', [
+                'user'      => Auth::user(),
+                'question' => $question
+            ]);
+        }
 
-        return $view->make('maintenance.question', [
-            'user'      => Auth::user(),
-            'question' => $question
-        ]);
+        return  abort(403);
     }
 }
