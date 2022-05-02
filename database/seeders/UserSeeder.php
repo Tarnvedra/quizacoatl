@@ -20,10 +20,6 @@ class UserSeeder extends Seeder
             [
                 ['name' => 'quizmaster', 'email' => 'quizmaster@quiz.com', 'password' => bcrypt($password)],
                 ['name' => 'paul', 'email' => 'paul@quiz.com', 'password' => bcrypt($password)],
-                ['name' => 'jason', 'email' => 'jason@quiz.com', 'password' => bcrypt($password)],
-                ['name' => 'bryan', 'email' => 'bryan@quiz.com', 'password' => bcrypt($password)],
-                ['name' => 'arnaud', 'email' => 'arnaud@quiz.com', 'password' => bcrypt($password)],
-                ['name' => 'john', 'email' => 'john@quiz.com', 'password' => bcrypt($password)]
             ]
         );
     }
